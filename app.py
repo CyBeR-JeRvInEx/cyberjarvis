@@ -1,7 +1,9 @@
 import streamlit as st
 
+# Postavke ekrana
 st.set_page_config(page_title="CyBeR-JeRvInEx OS", page_icon="🎤", layout="centered")
 
+# Hakerski dizajn sajta
 st.markdown("""
     <style>
     .stApp { background-color: #060a12; color: #00ff66; }
@@ -13,6 +15,7 @@ st.markdown("""
 st.title("[ CYBER-JARVIS MULTILINGUAL OS ]")
 st.write("UNIVERSAL SYSTEM: TEXT INTERACTION")
 
+# Biranje jezika
 jezik = st.selectbox("Izaberi jezik / Select Language", ["Srpski (SR)", "English (US)"])
 
 if jezik == "Srpski (SR)":
@@ -24,16 +27,19 @@ else:
 
 st.info(status_tekst)
 
+# Glavno polje za kucanje
 komanda = st.text_input("", placeholder=placeholder_tekst)
 
 if komanda:
     komanda_clean = komanda.lower().strip()
     st.success(f"Jarvis: Pretražujem '{komanda}' za Vas...")
     
-    # POTPUNO UNIVERZALNO: Šta god da se ukuca, ide direktno na Google pretragu sa ispravnim linkom!
-    target_url = f"https://google.com{komanda_clean}"
+    # 🎯 HIRURŠKI TAČAN LINK: Nema više spajanja reči sa .com!
+    target_url = "https://google.com" + komanda_clean
         
+    # JavaScript za automatsko otvaranje u novom prozoru
     js_kod = f"<script>window.open('{target_url}', '_blank');</script>"
     st.components.v1.html(js_kod, height=0)
     
+    # Rezervni link u slučaju blokade pop-up prozora
     st.markdown(f"🔗 [Klikni ovde ako pretraživač blokira prozor]({target_url})")
