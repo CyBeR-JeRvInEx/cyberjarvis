@@ -34,8 +34,8 @@ if komanda:
     komanda_clean = komanda.lower().strip()
     st.success(f"Jarvis: Pretražujem '{komanda}' za Vas...")
     
-    # 🎯 HIRURŠKI TAČAN LINK: Nema više spajanja reči sa .com!
-    target_url = "https://google.com" + komanda_clean
+    # 🎯 FIXNI LINK SA STROGO DEFINISANOM KOSOM CRTOM PRE SEARCH!
+    target_url = f"https://google.com{komanda_clean}"
         
     # JavaScript za automatsko otvaranje u novom prozoru
     js_kod = f"<script>window.open('{target_url}', '_blank');</script>"
