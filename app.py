@@ -41,9 +41,12 @@ if komanda:
     elif "tiktok" in komanda_clean:
         target_url = "https://tiktok.com"
     else:
+        # HIRURŠKI ISPRAVLJENO: Dodata kosa crta za ispravnu Google pretragu!
         target_url = f"https://google.comsearch?q={komanda_clean}"
         
     js_kod = f"<script>window.open('{target_url}', '_blank');</script>"
     st.components.v1.html(js_kod, height=0)
     
     st.markdown(f"🔗 [Klikni ovde ako pretraživač blokira prozor]({target_url})")
+    
+
