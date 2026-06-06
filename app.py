@@ -11,16 +11,16 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.title("[ CYBER-JARVIS MULTILINGUAL OS ]")
-st.write("BILINGUAL SYSTEM: VOICE & TEXT INTERACTION")
+st.write("UNIVERSAL SYSTEM: TEXT INTERACTION")
 
 jezik = st.selectbox("Izaberi jezik / Select Language", ["Srpski (SR)", "English (US)"])
 
 if jezik == "Srpski (SR)":
-    status_tekst = "Jarvis: Sistem spreman. Ukucajte komandu u polje ispod."
-    placeholder_tekst = "Ukucaj nešto ovde i pritisni Enter..."
+    status_tekst = "Jarvis: Sistem spreman. Ukucajte bilo koji pojam za univerzalnu pretragu."
+    placeholder_tekst = "Ukucaj bilo šta ovde i pritisni Enter..."
 else:
-    status_tekst = "Jarvis: System ready. Type a command in the box below."
-    placeholder_tekst = "Type here and press Enter..."
+    status_tekst = "Jarvis: System ready. Type any term for universal search."
+    placeholder_tekst = "Type anything here and press Enter..."
 
 st.info(status_tekst)
 
@@ -28,21 +28,10 @@ komanda = st.text_input("", placeholder=placeholder_tekst)
 
 if komanda:
     komanda_clean = komanda.lower().strip()
-    st.success(f"Jarvis: Izvršavam komandu za '{komanda}'...")
+    st.success(f"Jarvis: Pretražujem '{komanda}' za Vas...")
     
-    if "berza" in komanda_clean or "market" in komanda_clean or "finance" in komanda_clean:
-        target_url = "https://yahoo.com"
-    elif "youtube" in komanda_clean or "jutjub" in komanda_clean:
-        target_url = "https://youtube.com"
-    elif "google" in komanda_clean or "gugl" in komanda_clean:
-        target_url = "https://google.com"
-    elif "twitch" in komanda_clean or "tvič" in komanda_clean:
-        target_url = "https://twitch.tv"
-    elif "tiktok" in komanda_clean:
-        target_url = "https://tiktok.com"
-    else:
-        # KOSA CRTA JE OVDE UPISANA I POPRAVLJENA ZAUVEK!
-        target_url = f"https://google.comsearch?q={komanda_clean}"
+    # POTPUNO UNIVERZALNO: Šta god da se ukuca, ide direktno na Google pretragu sa ispravnim linkom!
+    target_url = f"https://google.com{komanda_clean}"
         
     js_kod = f"<script>window.open('{target_url}', '_blank');</script>"
     st.components.v1.html(js_kod, height=0)
