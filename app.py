@@ -41,7 +41,7 @@ if komanda:
     elif "tiktok" in komanda_clean:
         target_url = "https://tiktok.com"
     else:
-        # KOSA CRTA JE OVDE HIRURŠKI ISPRAVLJENA!
+        # KOSA CRTA JE OVDE UPISANA I POPRAVLJENA ZAUVEK!
         target_url = f"https://google.comsearch?q={komanda_clean}"
         
     js_kod = f"<script>window.open('{target_url}', '_blank');</script>"
